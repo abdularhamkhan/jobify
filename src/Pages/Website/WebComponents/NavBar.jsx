@@ -1,0 +1,100 @@
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+//src
+import logo from '../../../Assets/logo/jobify.svg'
+
+//icons
+import { ArrowUpRight, Sun, Moon, Menu } from 'lucide-react'
+
+//ui
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import {
+    Sheet,
+    SheetContent,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+
+
+//toggle
+import { useTheme } from '@/components/ui/theme-provider'
+
+const NavBar = () => {
+
+    const { theme, setTheme } = useTheme();
+
+    return (
+        <>
+            <nav className='flex items-center justify-between py-5 sticky top-0 z-20 text-primary font-semibold text-xl hover:transition-all cursor-pointer rounded w-[92%] mx-auto'>
+
+                <img src={logo} alt="" className='w-[124px] h-[32px] ml-6' />
+
+                <div className='xsm:max-lg:hidden flex items-center'>
+                    <Badge className='m-2 hover:text-xl hover:transition-all text-[14px] '>Home <ArrowUpRight size={18} /></Badge>
+                    <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Features <ArrowUpRight size={18} /></Badge>
+                    <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Stories <ArrowUpRight size={18} /></Badge>
+                </div>
+                <div className='flex items-center'>
+                    <Button variant="ghost" size="icon" aria-label="toggle-theme" className="mr-2"
+                        onClick={() => { setTheme(theme === "dark" ? "light" : "dark") }}
+                    >
+                        <Sun className='h-6 w-6 rotate-0 scale-0 transition-all dark:rotate-90 dark:scale-100' />
+                        <Moon className='absolute h-6 w-6 rotate-0 scale-100 transition-all dark:rotate-90 dark:scale-0' />
+                        <span className='sr-only'>Toggle Theme</span>
+                    </Button>
+                    <div className='xsm:max-lg:hidden'>
+                        <Button className='m-2'>Sign Up</Button>
+                        <Button >Login</Button>
+                    </div>
+                    <Sheet>
+                        <SheetTrigger>
+                            <Menu className='h-6 w-6 lg:hidden' />
+                        </SheetTrigger>
+
+                        <SheetContent className="bg-primary">
+                            <div className='flex items-center gap-4 flex-col'>
+                                <Badge className='hover:text-xl hover:transition-all text-[14px] '>Home <ArrowUpRight size={18} /></Badge>
+                                <Badge className='hover:text-xl hover:transition-all text-[14px] '>Features <ArrowUpRight size={18} /></Badge>
+                                <Badge className='hover:text-xl hover:transition-all text-[14px] '>Stories <ArrowUpRight size={18} /></Badge>
+
+                                <Button className='bg-black text-white w-full'>Sign Up <ArrowUpRight size={18} /> </Button>
+                                <Button className='bg-black text-white w-full'>Login <ArrowUpRight size={18} /> </Button>
+                                <Card className='w-full flex flex-col items-center'>
+                                    <CardHeader className='w-full flex flex-col items-center'>
+                                        <CardTitle>Main Office</CardTitle>
+                                        <CardDescription>info@jobify.com.pk<br />+92-309-0526241</CardDescription>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className='text-bold text-justify'>Jobify Complex, Opposite Expo Center. Lahore</p>
+                                    </CardContent>
+                                    <CardFooter>
+                                        <Button>Contact Us</Button>
+                                    </CardFooter>
+                                </Card>
+
+                                <p className='mt-4 text-black font-bold text-2xl text-left'>“Success seems to be connected with action. Successful people keep moving. They make mistakes, but they don't quit.” <Badge className='bg-white'>- Conrad Hilton</Badge></p>
+                            </div>
+
+
+
+                        </SheetContent>
+
+                    </Sheet>
+                </div>
+
+            </nav>
+
+
+        </>
+    )
+}
+
+export default NavBar
