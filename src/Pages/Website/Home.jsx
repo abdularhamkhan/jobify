@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 //components
-import NavBar from './WebComponents/NavBar'
 import Hero from './WebComponents/Hero'
 import ContactUs from './WebComponents/ContactUs'
 import Features from './WebComponents/Features'
@@ -16,17 +15,15 @@ import Client from './WebComponents/Client'
 const Home = () => {
     return (
         <>
-            <BrowserRouter>
-                <div className='m-4 tracking-tight'>
-                    <NavBar />
-                    <Hero />
-                    <Features />
-                    <Client />
-                    <Feedback />
-                    <ContactUs />
-                    <Footer />
-                </div>
-            </BrowserRouter>
+            <div className='m-4 tracking-tight'>
+
+                <Hero />
+                <Features />
+                <Client />
+                <Feedback />
+                <ContactUs />
+                <Footer />
+            </div>
         </>
     )
 }

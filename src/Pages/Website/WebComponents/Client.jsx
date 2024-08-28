@@ -28,9 +28,9 @@ const Client = () => {
   return (
     <>
 
-      <div className='mt-12 rounded-xl shadow-2xl dark:shadow-primary flex flex-col items-center'>
+      <div id='client' className='bg-primary-foreground mt-12 lg:mt-40 rounded-xl shadow-2xl dark:shadow-primary flex flex-col items-center overflow-hidden'>
 
-        <h1 className='text-center font-bold p-2'>Our <span className='text-primary'>Potential Clients</span></h1>
+        <h1 className='text-center font-bold p-2 md:border-b-8 md:border-white text-white'>Our <span className='text-primary'>Potential Clients</span></h1>
         <div className='m-4'>
           <Carousel
             plugins={[Autoplay({ delay: 2000 })]}
@@ -46,7 +46,7 @@ const Client = () => {
                     <CardContent>
                       {<img src={item.logo} className='md:h-60 rounded-2xl xsm:h-40' />}
                     </CardContent>
-                    <CardTitle className='text-center text-muted-foreground light:text-primary p-2 uppercase font-mono'>{item.title}</CardTitle>
+                    <CardTitle className='text-center text-muted-foreground light:text-primary p-2 uppercase font-mono font-extrabold'>{item.title}</CardTitle>
                     <CardFooter>
                       <Button className="text-wrap">Hired : {item.hired}</Button>
                     </CardFooter>

@@ -19,21 +19,25 @@ const Features = () => {
   return (
     <>
 
-      <div className='bg-primary mt-12 rounded-xl shadow-2xl dark:shadow-primary'>
-        <h1 className='text-center font-bold p-2'>Why Us</h1>
+      <div id='features' className='bg-primary mt-12 lg:mt-40 rounded-xl shadow-2xl dark:shadow-primary'>
+        <h1 className='text-center font-bold p-4'> <span className='md:border-b-8 md:border-black'>Why Us</span></h1>
         <div className='p-4 grid md:grid-cols-3 sm:max-md:grid-cols-2'>
           {features.map((item) => (
-            <Card key={item.id} className='m-4 mt-6'>
+            <Card key={item.id} className='m-4 mt-6 flex flex-col'>
               <CardHeader>
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription>{item.stats}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className='flex-grow'>
                 <p>{item.content}</p>
               </CardContent>
-              <CardFooter>
+
+              <CardFooter className='mt-auto'>
+
                 <Button className="text-wrap">{item.footer}</Button>
+
               </CardFooter>
+
             </Card>
 
           ))}

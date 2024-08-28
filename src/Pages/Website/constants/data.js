@@ -9,6 +9,12 @@ import logo7 from '../../../Assets/clients/facebook-7.svg'
 import logo8 from '../../../Assets/clients/google-1-1.svg'
 import logo9 from '../../../Assets/clients/tesla-motors.svg'
 import logo10 from '../../../Assets/clients/visa-10.svg'
+import img1 from '../../../Assets/feedback/img1.jpg'
+import img2 from '../../../Assets/feedback/img2.jpg'
+import img3 from '../../../Assets/feedback/img3.jpg'
+import img4 from '../../../Assets/feedback/img4.jpg'
+import img5 from '../../../Assets/feedback/img5.jpg'
+import img6 from '../../../Assets/feedback/img6.jpg'
 
 
 
@@ -78,33 +84,57 @@ export const features = [
     },
 ];
 
-
 export const feedback = [
     {
         id: "feedback-1",
         content:
-            "Money is only a tool. It will take you wherever you wish, but it will not replace you as the driver.",
-        name: "Herman Jensen",
+            "Jobify has transformed the way we collaborate with freelancers. The platform's integrated communication tools allow us to stay connected throughout the project, ensuring quicker decisions and faster deliveries.",
+        name: "Kenn Gallagher",
         title: "Founder & Leader",
-        img: "people01",
+        img: img1,
     },
     {
         id: "feedback-2",
         content:
-            "Money makes your life easier. If you're lucky to have it, you're lucky.",
+            "Thanks to Jobify, we’ve noticed a significant improvement in responsiveness. Our freelancers are more engaged, leading to increased efficiency and faster project completion. It's a win-win for everyone involved.",
         name: "Steve Mark",
-        title: "Founder & Leader",
-        img: "people02",
+        title: "CEO & Founder",
+        img: img2,
     },
     {
         id: "feedback-3",
         content:
-            "It is usually people in the money business, finance, and international trade that are really rich.",
-        name: "Kenn Gallagher",
+            "Collaborating on Jobify feels seamless, almost like working with an in-house team. The platform’s messaging feature is incredibly intuitive, making it easy to have detailed discussions without switching platforms.",
+        name: "Herman Jensen",
         title: "Founder & Leader",
-        img: "people03",
+        img: img3,
+    },
+    {
+        id: "feedback-4",
+        content:
+            "Jobify has been a game-changer for our business. The ability to easily manage multiple projects with freelancers around the globe has greatly enhanced our productivity and project outcomes.",
+        name: "Emily Carter",
+        title: "Project Manager",
+        img: img4,
+    },
+    {
+        id: "feedback-5",
+        content:
+            "I’ve been impressed with how Jobify makes it simple to find the right talent for any job. The platform’s user-friendly interface and strong support system have made managing our freelance projects a breeze.",
+        name: "Sophia Lee",
+        title: "HR Director",
+        img: img5,
+    },
+    {
+        id: "feedback-6",
+        content:
+            "The detailed profiles and review system on Jobify give us the confidence to hire freelancers who are the best fit for our projects. The platform has streamlined our hiring process, saving us both time and resources.",
+        name: "Michael Thompson",
+        title: "Operations Manager",
+        img: img6,
     },
 ];
+
 
 export const stats = [
     {

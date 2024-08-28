@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link as LinkRouter, Outlet } from 'react-router-dom'
+import { Link as LinkScroll } from 'react-scroll'
 //src
 import logo from '../../../Assets/logo/jobify.svg'
 
@@ -29,6 +30,8 @@ import { useTheme } from '@/components/ui/theme-provider'
 
 const NavBar = () => {
 
+
+
     const { theme, setTheme } = useTheme();
 
     return (
@@ -38,9 +41,9 @@ const NavBar = () => {
                 <img src={logo} alt="" className='w-[124px] h-[32px] ml-6' />
 
                 <div className='xsm:max-lg:hidden flex items-center'>
-                    <Badge className='m-2 hover:text-xl hover:transition-all text-[14px] '>Home <ArrowUpRight size={18} /></Badge>
-                    <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Features <ArrowUpRight size={18} /></Badge>
-                    <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Stories <ArrowUpRight size={18} /></Badge>
+                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='features'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Features <ArrowUpRight size={18} /></Badge></LinkScroll>
+                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='client'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px] '>Clients <ArrowUpRight size={18} /></Badge></LinkScroll>
+                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='stories'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Stories <ArrowUpRight size={18} /></Badge></LinkScroll>
                 </div>
                 <div className='flex items-center'>
                     <Button variant="ghost" size="icon" aria-label="toggle-theme" className="mr-2"
@@ -51,8 +54,8 @@ const NavBar = () => {
                         <span className='sr-only'>Toggle Theme</span>
                     </Button>
                     <div className='xsm:max-lg:hidden'>
-                        <Button className='m-2'>Sign Up</Button>
-                        <Button >Login</Button>
+                        <LinkRouter to="/sign-up">  <Button className='m-2'>Sign Up</Button></LinkRouter>
+                        <LinkRouter to="/log-in">  <Button >Login</Button></LinkRouter>
                     </div>
                     <Sheet>
                         <SheetTrigger>
@@ -61,9 +64,9 @@ const NavBar = () => {
 
                         <SheetContent className="bg-primary">
                             <div className='flex items-center gap-4 flex-col'>
-                                <Badge className='hover:text-xl hover:transition-all text-[14px] '>Home <ArrowUpRight size={18} /></Badge>
-                                <Badge className='hover:text-xl hover:transition-all text-[14px] '>Features <ArrowUpRight size={18} /></Badge>
-                                <Badge className='hover:text-xl hover:transition-all text-[14px] '>Stories <ArrowUpRight size={18} /></Badge>
+                                <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='features'>  <Badge className='hover:text-xl hover:transition-all text-[14px] '>Features <ArrowUpRight size={18} /></Badge></LinkScroll>
+                                <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='client'> <Badge className='hover:text-xl hover:transition-all text-[14px] '>Clients <ArrowUpRight size={18} /></Badge> </LinkScroll>
+                                <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='stories'>  <Badge className='hover:text-xl hover:transition-all text-[14px] '>Stories <ArrowUpRight size={18} /></Badge></LinkScroll>
 
                                 <Button className='bg-black text-white w-full'>Sign Up <ArrowUpRight size={18} /> </Button>
                                 <Button className='bg-black text-white w-full'>Login <ArrowUpRight size={18} /> </Button>
@@ -91,7 +94,6 @@ const NavBar = () => {
                 </div>
 
             </nav>
-
 
         </>
     )
