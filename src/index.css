@@ -36,10 +36,14 @@ h5 {
 
 h6 {
   font-size: 19.2px;
+  font-family: serif;
+
 }
 
 p {
   font-size: 16px; 
+  font-family: serif;
+
 }
 
 /* Shadcn themeing */
@@ -132,7 +136,8 @@ p {
 }
 
 @layer base {
-  * {
+ 
+  *{
     @apply border-border;
   }
 

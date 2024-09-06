@@ -1,9 +1,9 @@
 
-import Signup from '@/Pages/Layouts/Auth/AuthPages/Signup';
+import Signup from '@/Pages/Layouts/Auth/Signup/Signup';
 import WebLayout from '../Pages/WebLayout';
 import NotFound from './404';
-import AuthLayout from '@/Pages/Layouts/Auth/AuthLayout';
-import Login from '@/Pages/Layouts/Auth/AuthPages/Login';
+import Login from '@/Pages/Layouts/Auth/Login/Login';
+import AppLayout from '@/Pages/Layouts/App/AppLayout';
 
 let routes = [
     {
@@ -22,6 +22,11 @@ let routes = [
     {
         path: 'log-in',
         element: <Login />,
+
+    },
+    {
+        path: 'app',
+        element: <AppLayout />,
 
     },
     {

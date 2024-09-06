@@ -41,10 +41,10 @@ const NavBar = () => {
                 <img src={logo} alt="" className='w-[124px] h-[32px] ml-6' />
 
                 <div className='xsm:max-lg:hidden flex items-center'>
-                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='features'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Features <ArrowUpRight size={18} /></Badge></LinkScroll>
-                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='client'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px] '>Clients <ArrowUpRight size={18} /></Badge></LinkScroll>
-                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='stories'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Stories <ArrowUpRight size={18} /></Badge></LinkScroll>
-                </div>
+                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='features'> <LinkRouter to='/'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Features <ArrowUpRight size={18} /></Badge></LinkRouter>   </LinkScroll>
+                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='client'>   <LinkRouter to='/'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px] '>Clients <ArrowUpRight size={18} /></Badge> </LinkRouter> </LinkScroll>
+                    <LinkScroll spy={true} smooth={true} duration={700} offset={0} to='stories'>  <LinkRouter to='/'> <Badge className='m-2 hover:text-xl hover:transition-all text-[14px]'>Stories <ArrowUpRight size={18} /></Badge></LinkRouter>  </LinkScroll >
+                </div >
                 <div className='flex items-center'>
                     <Button variant="ghost" size="icon" aria-label="toggle-theme" className="mr-2"
                         onClick={() => { setTheme(theme === "dark" ? "light" : "dark") }}
@@ -57,7 +57,7 @@ const NavBar = () => {
                         <LinkRouter to="/sign-up">  <Button className='m-2'>Sign Up</Button></LinkRouter>
                         <LinkRouter to="/log-in">  <Button >Login</Button></LinkRouter>
                     </div>
-                    <Sheet>
+                    <Sheet className=''>
                         <SheetTrigger>
                             <Menu className='h-6 w-6 lg:hidden' />
                         </SheetTrigger>
@@ -83,7 +83,6 @@ const NavBar = () => {
                                     </CardFooter>
                                 </Card>
 
-                                <p className='mt-4 text-black font-bold text-2xl text-left'>“Success seems to be connected with action. Successful people keep moving. They make mistakes, but they don't quit.” <Badge className='bg-white'>- Conrad Hilton</Badge></p>
                             </div>
 
 
@@ -93,7 +92,7 @@ const NavBar = () => {
                     </Sheet>
                 </div>
 
-            </nav>
+            </nav >
 
         </>
     )
