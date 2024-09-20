@@ -22,11 +22,11 @@ import { toast } from "@/components/ui/use-toast"
  
 
 
-const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-})
+// const FormSchema = z.object({
+//   username: z.string().min(2, {
+//     message: "Username must be at least 2 characters.",
+//   }),
+// })
 
 
 const onSubmit = () => {
@@ -36,13 +36,13 @@ const onSubmit = () => {
 
 
 const JobSeekerSignupForm = () => {
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-  })
+  // const form = useForm<z.infer<typeof FormSchema>>({
+  //   resolver: zodResolver(FormSchema),
+  // })
   return (
     <div className='bg-muted p-10'>
       Job Seeker SignUp form
-      <Form {...form}>
+      {/* <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
         <FormField
           control={form.control}
@@ -62,7 +62,7 @@ const JobSeekerSignupForm = () => {
         />
         <Button type="submit">Submit</Button>
       </form>
-    </Form>
+    </Form> */}
     </div>
   )
 }
