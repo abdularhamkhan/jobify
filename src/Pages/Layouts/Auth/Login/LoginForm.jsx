@@ -20,9 +20,9 @@ export default function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
     try {
-      const validatedData = loginSchema.parse({ email, password })
+      const validatedData = loginSchema.safeParse({ email, password })
       console.log('Login attempt with:', validatedData)
-      // Here you would typically send the data to your authentication service
+      // Api call
       setErrors({})
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -34,7 +34,7 @@ export default function LoginForm() {
   return (
     <Card className="w-[350px]">
       <CardHeader>
-        <CardTitle className='text-center'>Login</CardTitle>
+        <CardTitle className='text-center font-mono'>Login</CardTitle>
         <CardDescription className='text-center mt-2'>Enter your credentials to access Jobify</CardDescription>
       </CardHeader>
       <CardContent>
@@ -62,6 +62,7 @@ export default function LoginForm() {
             <Input
               id="password"
               type="password"
+              placeholder="********"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               aria-invalid={errors.password ? "true" : "false"}

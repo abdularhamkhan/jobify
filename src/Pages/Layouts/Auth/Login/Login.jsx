@@ -5,7 +5,7 @@ const Login = () => {
     return (
 
         <AuthLayout>
-            <div className='flex flex-col items-center mt-60'>
+            <div className='flex flex-col items-center mt-48'>
                 <LoginForm />
             </div>
         </AuthLayout>
